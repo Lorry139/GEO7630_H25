@@ -33,12 +33,12 @@ map.addSource('commerces_source', {
       'circle-stroke-color': '#fff',
       'circle-stroke-width': 1
     },
-    filter: ['==', ['get', 'statut'], 'Ouvert']
+    
   });
 
 map.addSource('arrondissements-source', {
     type: 'geojson', // Type de source de données
-    data: 'https://donnees.montreal.ca/fr/dataset/limites-administratives-agglomeration/resource/e18bfd07-edc8-4ce8-8a5a-3b617662a794' // URL pgFeatureServ GeoJSON ! Attention il faut bien inclure la méthode qui fait la requete sans limite d'items de données
+    data: 'https://donnees.montreal.ca/dataset/70f66e93-89b2-442e-83eb-5d82f7b78c38/resource/c0a93a76-1eb8-41bb-83f0-e1705ae0f4e9/download/arrondissements.geojson' // URL pgFeatureServ GeoJSON ! Attention il faut bien inclure la méthode qui fait la requete sans limite d'items de données
 });
 
 map.addLayer({
