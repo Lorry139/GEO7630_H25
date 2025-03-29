@@ -36,7 +36,7 @@ map.addSource('commerces_source', {
     
   });
 
-map.addSource('arrondissements-source', {
+map.addSource('arrondissements_source', {
     type: 'geojson', // Type de source de données
     data: 'https://donnees.montreal.ca/dataset/70f66e93-89b2-442e-83eb-5d82f7b78c38/resource/c0a93a76-1eb8-41bb-83f0-e1705ae0f4e9/download/arrondissements.geojson' // URL pgFeatureServ GeoJSON ! Attention il faut bien inclure la méthode qui fait la requete sans limite d'items de données
 });
@@ -44,7 +44,7 @@ map.addSource('arrondissements-source', {
 map.addLayer({
     id: 'arrondissements',
     type: 'fill',
-    source: 'arrondissements-source',
+    source: 'arrondissements_source',
     paint: {
       'fill-outline-color': 'black',
       'fill-color': '#cccccc',
