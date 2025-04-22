@@ -1,4 +1,4 @@
-map.on('load', function () {
+function generatestationnements() {
  
     // Ajout de source vectorielle à la carte de l'équipe2:
     
