@@ -20,3 +20,28 @@ function generateArret_stationnements() {
         }
     });
 };
+
+// Ajouter un événement de clic sur le bouton "loadLayer" 
+// pour charger la couche de points aléatoires
+//document
+   // .getElementById('Arret_stationnements') // j'ai changé, et j'ai mis click et boutton pour essayer d'afficher ma couche, je pense que c'est un problème de source 
+   // .addEventListener('click', Arret_stationnements);
+ 
+    
+ 
+ 
+   const Arret_stationnements = document.querySelector('#Arret_stationnementsCheckbox');
+ 
+   ArretBus.addEventListener('change', (event) => {
+       if(event.target.checked) {
+        generateArret_stationnements()
+       }
+
+       
+           else  {//sinon, retirer-les
+
+
+               // Supprimer la couche de la carte
+               map.removeLayer('______________.');
+                    }
+                });
