@@ -1,6 +1,5 @@
 map.on('load', function () {
  
-
     map.addSource('RANL13299903.Arret_Stationnement-source', {
         'type': 'vector',
         'tiles': [ "https://silver-spoon-5grrgx7x9qxjhpprj-8801.app.github.dev/RANL13299903.Arret_Stationnement/{z}/{x}/{y}.pbf"]
@@ -13,10 +12,9 @@ map.on('load', function () {
         'source-layer': 'RANL13299903.Arret_Stationnement',
 
         'paint': {
-            "circle-color": "rgba(189, 19, 19, 1)",
-            "circle-opacity": 1,
-            "circle-width": 1,
-            "circle-translate-anchor": "map"
+            'circle-radius': 5, // Rayon du cercle
+            'circle-color': 'rgb(10, 67, 80)', // Couleur du cercle
+            'circle-opacity': 1 // Opacité du cercle
         }
     });
 });
@@ -30,18 +28,18 @@ map.on('load', function () {
     
  
  
-   const Arret_Stationnement = document.querySelector('#Arret_StationnementCheckbox');
+   //const Arret_Stationnement = document.querySelector('#Arret_StationnementCheckbox');
  
-   ArretBus.addEventListener('change', (event) => {
-       if(event.target.checked) {
-        generateArret_stationnements()
-       }
+   //ArretBus.addEventListener('change', (event) => {
+       //if(event.target.checked) {
+        //generateArret_stationnements()
+       //}
 
        
-           else  {//sinon, retirer-les
+           //else  {//sinon, retirer-les
 
 
                // Supprimer la couche de la carte
-               map.removeLayer('RANL13299903.Arret_Stationnement');
-                    }
-                });
+              // map.removeLayer('RANL13299903.Arret_Stationnement');
+                    //}
+                //});
