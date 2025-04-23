@@ -2,11 +2,11 @@ function generatestationnements() {
  
     // Ajout de source vectorielle à la carte de l'équipe2:
     
-            map.addSource('______________-source', { 
+            map.addSource('RANL13299903.Nbres_de_places_et_heures_de_stationnement-source', { 
     
                 'type': 'vector',
     
-                'tiles': [ "https:______________/{z}/{x}/{y}.pbf "]
+                'tiles': [ "https:https://silver-spoon-5grrgx7x9qxjhpprj-8801.app.github.dev/RANL13299903.Nbres_de_places_et_heures_de_stationnement/{z}/{x}/{y}.pbf"]
     
     
             });
@@ -15,13 +15,13 @@ function generatestationnements() {
     
             map.addLayer({
     
-                'id': '______________',
+                'id': 'RANL13299903.Nbres_de_places_et_heures_de_stationnement',
     
-                'type': '______________',
+                'type': 'circle',
     
-                'source': '______________-source',
+                'source': 'RANL13299903.Nbres_de_places_et_heures_de_stationnement-source',
     
-                'source-layer': '______________',
+                'source-layer': 'RANL13299903.Nbres_de_places_et_heures_de_stationnement',
     // Dêfinition du style des couches 
 
     'paint': {

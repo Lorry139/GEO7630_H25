@@ -1,16 +1,16 @@
 function generateNbre_de_site() {
  
  
-    map.addSource('______________', {
+    map.addSource('RANL13299903.Nbre_de_site-source', {
         'type': 'vector',
-        'tiles': [ ""]
+        'tiles': [ "https://silver-spoon-5grrgx7x9qxjhpprj-8801.app.github.dev/RANL13299903.Nbre_de_site/{z}/{x}/{y}.pbf"]
 
     });
     map.addLayer({
-        'id': '______________',
+        'id': 'Nbre_de_site',
         'type': 'fill',
-        'source': '______________-source',
-        'source-layer': '______________',
+        'source': 'RANL13299903.Nbre_de_site-source',
+        'source-layer': 'RANL13299903.Nbre_de_site',
 
         'paint': {
             "fill-color": "rgb(48, 91, 102)",
@@ -33,7 +33,7 @@ function generateNbre_de_site() {
  
     
  
-   const Nbredesite = document.querySelector('#NbredesiteCheckbox'); // Ajout d'une constante nbredesite pour l'action checkbox
+   const Nbre_de_site = document.querySelector('#Nbre_de_siteCheckbox'); // Ajout d'une constante nbredesite pour l'action checkbox
  
    Nbredesite.addEventListener('change', (event) => { // Ecoute de l'evenement change pour la checkbox
 
@@ -48,7 +48,7 @@ function generateNbre_de_site() {
 
   // Supprimer la couche de la carte
 
-  map.removeLayer('______________');
+  map.removeLayer('RANL13299903.Nbre_de_site');
 
        }
 

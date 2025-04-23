@@ -1,16 +1,16 @@
-function generateArret_stationnements() {
+map.on('load', function () {
  
- 
-    map.addSource('______________.', {
-        'type': 'circle',
-        'tiles': [ ""]
+
+    map.addSource('RANL13299903.Arret_Stationnement-source', {
+        'type': 'vector',
+        'tiles': [ "https://silver-spoon-5grrgx7x9qxjhpprj-8801.app.github.dev/RANL13299903.Arret_Stationnement/{z}/{x}/{y}.pbf"]
 
     });
     map.addLayer({
-        'id': '______________.',
+        'id': 'Arret_Stationnement',
         'type': 'circle',
-        'source': '______________-source',
-        'source-layer': '______________',
+        'source': 'RANL13299903.Arret_Stationnement-source',
+        'source-layer': 'RANL13299903.Arret_Stationnement',
 
         'paint': {
             "circle-color": "rgba(189, 19, 19, 1)",
@@ -19,18 +19,18 @@ function generateArret_stationnements() {
             "circle-translate-anchor": "map"
         }
     });
-};
+});
 
 // Ajouter un événement de clic sur le bouton "loadLayer" 
 // pour charger la couche de points aléatoires
 //document
-   // .getElementById('Arret_stationnements') // j'ai changé, et j'ai mis click et boutton pour essayer d'afficher ma couche, je pense que c'est un problème de source 
-   // .addEventListener('click', Arret_stationnements);
+   // .getElementById('Arret_Stationnement') // j'ai changé, et j'ai mis click et boutton pour essayer d'afficher ma couche, je pense que c'est un problème de source 
+   // .addEventListener('click', Arret_Stationnement);
  
     
  
  
-   const Arret_stationnements = document.querySelector('#Arret_stationnementsCheckbox');
+   const Arret_Stationnement = document.querySelector('#Arret_StationnementCheckbox');
  
    ArretBus.addEventListener('change', (event) => {
        if(event.target.checked) {
@@ -42,6 +42,6 @@ function generateArret_stationnements() {
 
 
                // Supprimer la couche de la carte
-               map.removeLayer('______________.');
+               map.removeLayer('RANL13299903.Arret_Stationnement');
                     }
                 });
