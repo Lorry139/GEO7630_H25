@@ -2,7 +2,7 @@ map.on('load', function () {
  
     map.addSource('RANL13299903.Arret_Stationnement-source', {
         'type': 'vector',
-        'tiles': [ "https://silver-spoon-5grrgx7x9qxjhpprj-8801.app.github.dev/RANL13299903.Arret_Stationnement/{z}/{x}/{y}.pbf"]
+        'tiles': [ "https://silver-journey-x5pp5vgv4rr53jj4-8801.app.github.dev/RANL13299903.Arret_Stationnement/{z}/{x}/{y}.pbf"]
 
     });
     map.addLayer({
@@ -12,9 +12,16 @@ map.on('load', function () {
         'source-layer': 'RANL13299903.Arret_Stationnement',
 
         'paint': {
-            'circle-radius': 5, // Rayon du cercle
-            'circle-color': 'rgb(10, 67, 80)', // Couleur du cercle
-            'circle-opacity': 1 // Opacité du cercle
+            'circle-radius': 5,
+            'circle-color': [
+                'step',
+                ['get', 'distance'], // <- ici "distance" est le champ dans ta donnée
+                'green',  // si distance <= 100
+                100, 'blue', // si distance > 100 et <= 300
+                300, 'red'   // si distance > 300 et <= 500
+                // tout ce qui est > 500m sera rouge aussi sauf si tu veux ajouter une 4e couleur
+            ],
+            'circle-opacity': 1
         }
     });
 });
@@ -42,4 +49,4 @@ map.on('load', function () {
                // Supprimer la couche de la carte
               // map.removeLayer('RANL13299903.Arret_Stationnement');
                     //}
-                //});
+                //});
