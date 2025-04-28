@@ -90,11 +90,25 @@ Nous avons ajouté une fonctionnalité générant des buffers de 100m autour des
 
 ![Image Alt](https://github.com/Lorry139/geo7630h25/blob/7cc8b1ffb979f0ff247f48df6b0dd5c8765ef722/Images%20TP3/Capture%20d%E2%80%99%C3%A9cran%202025-04-28%20121350.png)
 
-#### - 
+#### - 2.5D et Bouton 2.5D
+Le 2.5D est le JS utilsé pour animer la couche hexagone index en 2.5D, pour le bouton 2.5D, c,est la fonctionnalité permettant de basculer en 2D ou en 2.5D directement pour la couche Nombre de site uniquement.
 
-![Image Alt]()
+Dans cette image par exemple, la couche nombre de site a été basculé en 2D.
 
-![Image Alt]()
+![Image Alt](https://github.com/Lorry139/geo7630h25/blob/19350c5091d4f20cf809c3449ea1fabbcfc1ec19/Images%20TP3/Capture%20d%E2%80%99%C3%A9cran%202025-04-28%20122137.png)
+
+#### - Mouse interactions
+Comme on l'avait vu dans les images précédents, dans ce js, toutes nos codes permettant ces interactions au clic de la souris.
+
+#### - Layer handler
+Cette fonctionnalité nous permet en fait de supprimer toutes nos couches qui apparaissent sur la carte à partir du bouton resetMap que l'on a aussi implanté dans nos HTML.
+
+![Image Alt](https://github.com/Lorry139/geo7630h25/blob/42c253cf251043cd66255de9466ec67e75d8a8d8/Images%20TP3/Capture%20d%E2%80%99%C3%A9cran%202025-04-28%20122855.png)
+
+#### - Controles de navigations
+Les boutons de controles de navigations ont directement été placé dans le main(app.js)
+
+![Image Alt](https://github.com/Lorry139/geo7630h25/blob/a76ac39e605e34e27b374a789fa2aeb3c6ac363f/Images%20TP3/Capture%20d%E2%80%99%C3%A9cran%202025-04-28%20123026.png)
 
 ![Image Alt]()
 
