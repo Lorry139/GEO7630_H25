@@ -449,10 +449,25 @@ map.on('click', 'Nbres_de_places_et_heures_de_stationnement', (e) => {
     new maplibregl.Popup()
         .setLngLat(feature.geometry.coordinates)
         .setHTML(`
-            <strong>Emplacement :</strong> ${emplacement}<br>
-            <strong>Nombre de places :</strong> ${nombrePlaces}<br>
-            <strong>Heures :</strong> ${heures}<br>
-            <strong>Note :</strong> ${note}
+            <div style="
+                background: #ffffff;
+                padding: 15px;
+                border-radius: 10px;
+                font-family: 'Open Sans', sans-serif;
+                font-size: 13px;
+                color: #333;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+                max-width: 250px;
+                line-height: 1.5;
+            ">
+                <h4 style="margin-top: 0; margin-bottom: 10px; font-size: 16px; color: #0078A8;">
+                    Informations sur le stationnement
+                </h4>
+                <p style="margin: 0;"><strong>📍 Emplacement :</strong><br> ${emplacement}</p>
+                <p style="margin: 0;"><strong>🚗 Nombre de places :</strong> ${nombrePlaces}</p>
+                <p style="margin: 0;"><strong>⏰ Heures de restriction :</strong><br> ${heures}</p>
+                ${note ? `<p style="margin: 0;"><strong>📝 Note :</strong><br> ${note}</p>` : ''}
+            </div>
         `)
         .addTo(map);
 
