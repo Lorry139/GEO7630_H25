@@ -1,3 +1,4 @@
+// Ajout de la couche Arret_stationnement
 map.addLayer({
     'id': 'Arret_Stationnement',
     'type': 'circle',

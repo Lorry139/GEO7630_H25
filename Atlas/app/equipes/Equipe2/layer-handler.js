@@ -21,7 +21,7 @@ function removeAllLayersAndSources() {
         }
     });
 }
- 
+ // Cliquer sur le bouton restMap pour supprimer toutes les couches
 document
     .getElementById('resetMap')
     .addEventListener('click', removeAllLayersAndSources);

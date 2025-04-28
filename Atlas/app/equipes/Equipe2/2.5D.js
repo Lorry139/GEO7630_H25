@@ -28,4 +28,4 @@ map.addLayer({
         'fill-extrusion-opacity': 0.7
     }
 });
-// Une visualisation en 2.5D mais qui n'est pas visible à cause de la graduation de couleurs qui n'est pas ressortie
+// Une visualisation en 2.5D pour la couche hexagon densité mais qui n'est pas visible à cause de la graduation de couleurs qui n'est pas ressortie

@@ -66,6 +66,8 @@ map.addControl(new maplibregl.ScaleControl({
     unit: 'metric'
 }), 'bottom-left');
 
+
+// Fonctionnalités lorsque la carte se charge à l'ouverture
 map.on('load', function () {
     console.log('Carte chargée');
     // Pour que la couche Nbres_de_places_et_heures_de_stationnement soit chargé directement lorsque la carte commence à s'afficher
@@ -76,7 +78,7 @@ map.on('load', function () {
     addLayer('Nbres_de_places_et_heures_de_stationnement');
     updateLegend('Nbres_de_places_et_heures_de_stationnement');
 });
-// Focntion pour voir les couches directement lorsqu'on les fait appraitre
+// Fonction pour voir les couches directement lorsqu'on les fait apparaitre
 function updateLegend(layerId) {
     const legend = document.getElementById('legend');
     legend.innerHTML = '';
@@ -131,14 +133,14 @@ function updateLegend(layerId) {
     }
 }
 
-// Fonctions de setup des sources
+// Fonctions de paramétrages des sources de chaque couche
 function setupArretStationnement() {
     map.addSource('RANL13299903.Arret_Stationnement-source', {
         type: 'vector',
         tiles: [`https://silver-journey-x5pp5vgv4rr53jj4-8801.app.github.dev/RANL13299903.Arret_Stationnement/{z}/{x}/{y}.pbf`]
     });
 }
-
+// CodespaceID s'adapte automatiquement au changement de codespace et permet d'appeler les couches depuis la base de données sans conflits
 function setupDensiteHexagon() {
     map.addSource('RANL13299903.Denssité_hexagon-source', {
         type: 'vector',
@@ -170,7 +172,7 @@ function toggleLayer(layerId, setupSourceFn) {
         console.log('Layer retiré:', layerId);
         updateLegend(null);
     } else {
-        // Vérifier l'existence réelle de la source avant de la recréer
+        // Vérifier l'existence réelle de la source avant de la recréer (Pour pouvoir réutiliser les boutons)
         if (!map.getSource(sourceId)) {
             setupSourceFn();
             console.log('Source créée:', sourceId);
@@ -247,7 +249,9 @@ function addLayer(layerId) {
                     'fill-outline-color': 'gray'
                 }
             });
-// Néanmoins, pour cette couche, je n'arrive à graduer ses couleurs, je pense que c'est une erreur par rapport à son traitement sur FME
+
+
+            // Néanmoins, pour cette couche, je n'arrive à graduer ses couleurs, je pense que c'est une erreur par rapport à son traitement sur FME
 map.addLayer({
     'id': 'Denssité_hexagon-3d',
     'type': 'fill-extrusion',
@@ -278,6 +282,8 @@ map.addLayer({
         'fill-extrusion-opacity': 0.7
     }
 });
+// Une visualisation en 2.5D pour la couche hexagon densité mais qui n'est pas visible à cause de la graduation de couleurs qui n'est pas ressortie
+        
 
         break;
         case 'Nbres_de_places_et_heures_de_stationnement':
@@ -420,7 +426,7 @@ map.addLayer({
     }
 }
  
-
+// Fonction de clic sur les boutons des couches
 document.getElementById('toggleArretStationnement').addEventListener('click', function () {
     toggleLayer('Arret_Stationnement', setupArretStationnement);
 });
@@ -437,7 +443,7 @@ document.getElementById('toggleNbreDeSite').addEventListener('click', function (
     toggleLayer('Nbre_de_site', setupNbreDeSite);
 });
 
-// Affichage par clic permettant d'avoir des informations sur les heures, l'emplacement des stationnements
+// Affichage par clic sur les couches permettant d'avoir des informations sur les heures, l'emplacement des stationnements
 map.on('click', 'Nbres_de_places_et_heures_de_stationnement', (e) => {
     const feature = e.features[0];
 
@@ -476,14 +482,14 @@ map.on('click', 'Nbres_de_places_et_heures_de_stationnement', (e) => {
 
 map.on('click', 'Arret_Stationnement', (e) => {
     const feature = e.features[0];
-
+// Les informations à afficher sur le popup
     const emplacement = feature.properties.emplacement_stationnement || 'Emplacement non disponible';
     const nom_arret = feature.properties.nom_arret || 'Nom non disponible';
     const distance = feature.properties.distance_m_ != null ? feature.properties.distance_m_.toFixed(2) + ' m' : 'Distance inconnue';
     
     const type_transport = feature.properties['type_de_transport__0=bus_2=métro_'];
     
-    // Définir le texte et la couleur selon le type de transport
+    // Pour définir le texte et la couleur selon le type de transport
     let typeText = 'Type inconnu';
     let popupColor = 'white'; // couleur par défaut
 

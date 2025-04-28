@@ -2,7 +2,7 @@
 // Popup pour afficher les informations sur les places disponibles du stationnements, les heures de restrictions et les emplacements
 map.on('click', 'Nbres_de_places_et_heures_de_stationnement', (e) => {
     const feature = e.features[0];
-
+// Les informations à afficher sur le popup
     const emplacement = feature.properties.emplacement || 'Emplacement non défini';
     const nombrePlaces = feature.properties.nbr_pla != null ? feature.properties.nbr_pla : 'Nombre inconnu';
     const heures = feature.properties.heures || 'Heures non précisées';
@@ -40,7 +40,7 @@ map.on('click', 'Nbres_de_places_et_heures_de_stationnement', (e) => {
 // Popup pour afficher les informations concernant l'arret se trouvant autour de la zone de stationnement ( distance/au stationnement, nom de l'arret, Emplacement, type d'arret )
 map.on('click', 'Arret_Stationnement', (e) => {
     const feature = e.features[0];
-
+// Les informations à afficher sur le popup
     const emplacement = feature.properties.emplacement_stationnement || 'Emplacement non disponible';
     const nom_arret = feature.properties.nom_arret || 'Nom non disponible';
     const distance = feature.properties.distance_m_ != null ? feature.properties.distance_m_.toFixed(2) + ' m' : 'Distance inconnue';
@@ -84,10 +84,10 @@ map.on('click', 'Arret_Stationnement', (e) => {
 
     map.flyTo({ center: feature.geometry.coordinates, zoom: 14 });
 });
-
+// Popup pour la couche nombre de site
 map.on('click', 'Nbre_de_site', (e) => {
     const feature = e.features[0];
-
+// Les informations à afficher sur le popup
     const nom = feature.properties.nom || 'Nom non disponible';
     const nbre_sites = feature.properties.nbre_site_stationnement != null ? feature.properties.nbre_site_stationnement : 'Non précisé';
 
