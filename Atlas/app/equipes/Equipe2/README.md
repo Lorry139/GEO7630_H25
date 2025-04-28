@@ -55,7 +55,42 @@ La couche Places et heures de stationnement est aussi chargée en avance car ell
 
 ![Image Alt](https://github.com/Lorry139/geo7630h25/blob/0ee25be27f43b337ac85381f5ceb11031ac38241/Images%20TP3/Capture%20d%E2%80%99%C3%A9cran%202025-04-28%20114753.png)
 
+### - Description des couches et interactions dynamiques
+#### - Stationnements
+Directement chargée sur la carte, on peut cliquer sur les couches afin de générer une fentre popup montrant des informations importantes sur les stationnements cliquées, en plus, sur l'interface des couches, une explication sur les légendes apparait directement lorsqu'on clique sur le bouton d'interactions de cette couche.
+
+![Image Alt](https://github.com/Lorry139/geo7630h25/blob/d6eb9f7164e41a54abf173eae7d3b4f39674c3df/Images%20TP3/Capture%20d%E2%80%99%C3%A9cran%202025-04-28%20115836.png)
+
+#### - Arrets STM
+Appuyer sur le bouton Arrets STM pour les faire apparaitre, les légendes directement chargée en meme temps sur la fenetre faisant apparaitre les couches.
+Cliquer sur les points permettra de faire apparaitre aussi des informations concernant ces arrets ( ex : Emplacement du stationnement : Aréna Francis-Bouillon - 3175, rue de Rouen
+Nom de l'arrêt : Station Préfontaine - Édicule Hochelaga Nord (B)
+Distance : 343.53 m
+Type : Station de métro 🚇).
+
+![Image Alt](https://github.com/Lorry139/geo7630h25/blob/59f5ed6cae5c51d5bea7b1ce5463d75560efe8ba/Images%20TP3/Capture%20d%E2%80%99%C3%A9cran%202025-04-28%20120415.png)
+
+#### - Nombre de site
+Cette couche montre les répartition des sites de stationnements disponibles durant les périodes de déneigements par arrondissements.
+Appuyer sur les couches pourra faire appraitre le nom de l'arrondissement concernés.
+
+Elle est couplée à une fonctionnalité de visualisation en 2.5D et 2D au besoin.
+
+![Image Alt](https://github.com/Lorry139/geo7630h25/blob/d0cef44d30ee24e0ebf30513c8df216bdf36117a/Images%20TP3/Capture%20d%E2%80%99%C3%A9cran%202025-04-28%20120811.png)
+
+#### - Densité hexagone
+Couche d'index pouvant servir à visualiser la densité des stationnements dans les arrondissements de Montréal, néanmoins, les couleurs ne reflètent pas encore le visuel attendu alors que la légende indique déja les valeurs de densités pour chaque couleur.
+Elle est normalement affichée en 2.5D aussi
+
 ![Image Alt]()
+
+### - FOnctionnalités adjacentes
+#### - Buffer
+Nous avons ajouté une fonctionnalité générant des buffers de 100m autour des arrets STM, le bouton créer buffer sert à les faire apparaitre une fois que la couche Arret STM est présente sur la carte.
+
+![Image Alt](https://github.com/Lorry139/geo7630h25/blob/7cc8b1ffb979f0ff247f48df6b0dd5c8765ef722/Images%20TP3/Capture%20d%E2%80%99%C3%A9cran%202025-04-28%20121350.png)
+
+#### - 
 
 ![Image Alt]()
 
