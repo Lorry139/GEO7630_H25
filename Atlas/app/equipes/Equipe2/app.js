@@ -1,4 +1,4 @@
-var codeSpaceID = 'silver-journey-x5pp5vgv4rr53jj4';
+var codeSpaceID = 'silver-journey-x5pp5vgv4rr53jj4'; // Pour associer l'ID du Codespace aux sources des layers À chaque changement de Codespace
 
 console.log('TEST');
 
@@ -9,6 +9,19 @@ var map = new maplibregl.Map({
     zoom: 9,
     hash: true
 });
+
+// Associer les sources aux ID des layers
+const layersSources = {
+    'Arret_Stationnement': 'RANL13299903.Arret_Stationnement-source',
+    'Denssité_hexagon': 'RANL13299903.Denssité_hexagon-source',
+    'Denssité_hexagon-3d': 'RANL13299903.Denssité_hexagon-source', // 3D utilise la même source que 2D
+    'Nbres_de_places_et_heures_de_stationnement': 'RANL13299903.Nbres_de_places_et_heures_de_stationnement-source',
+    'Nbres_de_places_et_heures_de_stationnement-label': 'RANL13299903.Nbres_de_places_et_heures_de_stationnement-source', // Label utilise la même source
+    'Nbre_de_site': 'RANL13299903.Nbre_de_site-source',
+    'Nbre_de_site-3d': 'RANL13299903.Nbre_de_site-source', // 3D utilise aussi la même source
+    'Nbre_de_site-label': 'RANL13299903.Nbre_de_site-source', // Label aussi
+    'buffer-arret-layer': 'buffer-arret-source' // Pour les buffers créés autour des arrêts
+};
 
 function loadTeam(teamName) {
     ['Equipe1', 'Equipe2', 'Equipe3', 'Equipe4', 'Equipe5'].forEach(id => {
@@ -55,6 +68,13 @@ map.addControl(new maplibregl.ScaleControl({
 
 map.on('load', function () {
     console.log('Carte chargée');
+    // Pour que la couche Nbres_de_places_et_heures_de_stationnement soit chargé directement lorsque la carte commence à s'afficher
+    if (!map.getSource(layersSources['Nbres_de_places_et_heures_de_stationnement'])) {
+        setupPlacesStationnement();
+    }
+
+    addLayer('Nbres_de_places_et_heures_de_stationnement');
+    updateLegend('Nbres_de_places_et_heures_de_stationnement');
 });
 
 function updateLegend(layerId) {
@@ -140,20 +160,30 @@ function setupNbreDeSite() {
     });
 }
 
+
 // Fonction générique pour toggler
 function toggleLayer(layerId, setupSourceFn) {
+    const sourceId = layersSources[layerId];  // On récupère le bon source ID
+
     if (map.getLayer(layerId)) {
         map.removeLayer(layerId);
         console.log('Layer retiré:', layerId);
-        updateLegend(null); // ➔ Reset la légende
+        updateLegend(null);
     } else {
-        if (!map.getSource(layerId + '-source')) {
+        // Vérifier l'existence réelle de la source avant de la recréer
+        if (!map.getSource(sourceId)) {
             setupSourceFn();
+            console.log('Source créée:', sourceId);
+        } else {
+            console.log('Source déjà existante:', sourceId);
         }
+
         addLayer(layerId);
-        updateLegend(layerId); // ➔ Met à jour la légende automatiquement
+        console.log('Layer ajouté:', layerId);
+        updateLegend(layerId);
     }
 }
+
 
 // Ajouter les couches
 function addLayer(layerId) {
