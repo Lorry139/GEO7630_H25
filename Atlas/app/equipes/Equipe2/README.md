@@ -47,8 +47,8 @@ Elle contient notamment les scripts des couches suivantes :
 - layer-handler.js
 - buffer.js
 
-## 4- Démonstration des fonctionnalités
-### 3- Chargement de la carte
+## 4- Déscription des fonctionnalités
+### - Chargement de la carte
 AU chargement de la carte, nous pouvons apercevoir des boutons pour interagir avec les couches, basculer en monde 2D/2.5D pour certaines couches, créer des buffers, et supprimer toutes les couches de la carte.
 
 La couche Places et heures de stationnement est aussi chargée en avance car elle contient le plus d'informations concernant les stationnements et montre le nombre de places directement sur les étiquettes avec aussi, une taille des symboles proportionnelles à ce nombre.
