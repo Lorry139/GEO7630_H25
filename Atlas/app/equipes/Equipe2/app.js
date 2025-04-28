@@ -76,7 +76,7 @@ map.on('load', function () {
     addLayer('Nbres_de_places_et_heures_de_stationnement');
     updateLegend('Nbres_de_places_et_heures_de_stationnement');
 });
-
+// Focntion pour voir les couches directement lorsqu'on les fait appraitre
 function updateLegend(layerId) {
     const legend = document.getElementById('legend');
     legend.innerHTML = '';
@@ -161,7 +161,7 @@ function setupNbreDeSite() {
 }
 
 
-// Fonction générique pour toggler
+// Fonction générique pour toggler (Bouton faisant appel aux couches)
 function toggleLayer(layerId, setupSourceFn) {
     const sourceId = layersSources[layerId];  // On récupère le bon source ID
 
@@ -419,8 +419,7 @@ map.addLayer({
             break;
     }
 }
-
-// Lier les boutons aux actions, à usage unique pour l'instant car je n'ai pas encore trouver la solution pour que ca soit réutilisable 
+ 
 
 document.getElementById('toggleArretStationnement').addEventListener('click', function () {
     toggleLayer('Arret_Stationnement', setupArretStationnement);
