@@ -111,9 +111,3 @@ Les boutons de controles de navigations ont directement été placé dans le mai
 ![Image Alt](https://github.com/Lorry139/geo7630h25/blob/a76ac39e605e34e27b374a789fa2aeb3c6ac363f/Images%20TP3/Capture%20d%E2%80%99%C3%A9cran%202025-04-28%20123026.png)
 
 ![Image Alt]()
-
-![Image Alt]()
-
-![Image Alt]()
-
-![Image Alt]()
