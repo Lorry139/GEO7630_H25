@@ -6,6 +6,7 @@ Les étapes par lesquelles nous sommes passés se sont déroulés comme suit.
  ### 1- Mise en place de l'interface et des conteneurs
 La première partie de notre TP consistait à faire en sorte que l'on puisse librement développer notre application cartographique dans un environnement facilement déploiable que ce soit durant le développement ou la production.
 C'est à dire configuration d'un fichier .env pour que l'on puisse avoir accès à nos bases de données Pg_tile_serv et Pg_feature_serv.
+
 DB_USER=RANL13299903
 DB_PASSWORD=RANL13299903
 DB_HOST=geo7630h25.cvwywmuc8u6v.us-east-1.rds.amazonaws.com
@@ -109,5 +110,3 @@ Cette fonctionnalité nous permet en fait de supprimer toutes nos couches qui ap
 Les boutons de controles de navigations ont directement été placé dans le main(app.js)
 
 ![Image Alt](https://github.com/Lorry139/geo7630h25/blob/a76ac39e605e34e27b374a789fa2aeb3c6ac363f/Images%20TP3/Capture%20d%E2%80%99%C3%A9cran%202025-04-28%20123026.png)
-
-![Image Alt]()
